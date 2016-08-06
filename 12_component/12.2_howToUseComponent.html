@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>12.2_howToUseComponent</title>
+	<script type="text/javascript">
+		//#注册
+		// 之前说过，我们可以使用 Vue.extend() 创建一个组件构造器：
+		var MyComponent = Vue.extend({
+			// 选项...
+		});
+		// 要把这个构造器用作组件，需要用 Vue.component(tag, constructor) 注册：
+		// 全局注册组件，tag 为 my-component
+		Vue.component('my-component', MyComponent)
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

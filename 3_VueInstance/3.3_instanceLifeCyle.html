@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3.3_instanceLifeCyle</title>
+	<script type="text/javascript">
+		// Vue 实例在创建时有一系列初始化步骤——例如，它需要建立数据观察，编译模板，创建必要的数据绑定。在此过程中，它也将调用一些生命周期钩子，给自定义逻辑提供运行机会。例如 created 钩子在实例创建后调用：
+
+		var vm = new Vue({
+			data: {
+				a: 1
+			},
+			created: function() {
+				//this 指向 vm 实例
+				console.log("a is: " + this.a);
+			}
+		})
+		// -> "a is: 1"
+		// 也有一些其他的钩子，在实例生命周期的不同阶段调用，如 compiled、ready、destroy。钩子的 this 指向调用它的 Vue 实例。一些用户可能会问 Vue.js 是否有“控制器”的概念？答案是，没有。组件的自定义逻辑可以分割在这些钩子中。
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

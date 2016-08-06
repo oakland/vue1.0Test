@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>5.2_computedPropertyVS$watch</title>
+	<script type="text/javascript" src="../scripts/vue.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+			var vm = new Vue({
+				el: "#example",
+				data: {
+					firstName: "Foo",
+					lastName: "Bar",
+					fullName: "Foo Bar"
+				},
+				computed: {
+					fullName: function() {
+						return this.firstName + " " + this.lastName
+					}
+				}
+			})
+			//======== $watch ========
+			// vm.$watch("firstName", function(val) {
+			// 	this.fullName = val + " " + this.lastName
+			// })
+			// vm.$watch("lastName", function(val) {
+			// 	this.fullName = this.firstName + " " + val
+			// })
+			//======== $watch ========
+
+		};
+	</script>
+</head>
+<body>
+	<div id="example">{{ fullName }}</div>
+</body>
+</html>

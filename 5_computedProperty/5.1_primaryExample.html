@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>5.1_primaryExample</title>
+	<script type="text/javascript" src="../scripts/vue.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+			var vm = new Vue({
+				el: "#example",
+				data: {
+					a: 1
+				},
+				computed: {
+					//一个计算属性的 getter
+					b: function() {
+						//'this' 指向 vm 实例
+						return this.a + 1
+					}
+				}
+			})
+		};
+		//这里我们声明了一个计算属性 b。我们提供的函数用作属性 vm.b 的 getter。你可以打开浏览器的控制台，vm.b 的值始终取决于 vm.a 的值。你可以像绑定普通属性一样在模板中绑定计算属性。Vue 直到 vm.b 依赖于 vm.a，因此当 vm.a 发生改变时，依赖于 vm.b 的绑定也会更新。而且最妙的是我们是声明式地创建了这种依赖关系：计算属性的 getter 是干净无副作用的，因此也是易于测试和理解的。
+	</script>
+</head>
+<body>
+	<div id="example">
+		a={{ a }}, b={{ b }}
+	</div>
+</body>
+</html>

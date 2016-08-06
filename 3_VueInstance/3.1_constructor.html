@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3.1_constructor</title>
+	<script type="text/javascript" src="../scripts/vue.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+			// 每一个 Vue.js 应用的起步都是通过构造器函数 Vue 创建一个 Vue 的根实例：
+			// 一个 Vue 实例其实正是一个 MVVM 模式中所描述的 viewModel - 因此在文档中会经常使用 vm 这个变量名
+			// 在实例化 Vue 时，需要传入一个选项对象，它可以包含数据、模板、挂载元素、方法、生命周期钩子等选项。全部的选项可以在 API 文档中查看。
+			// 可以扩展 Vue 构造器，从而用预定义选项创建可复用的组件构造器：
+			var myComponent = Vue.extend({
+				// 扩展选项
+			})
+			// 所有的 'myComponent' 实例都将以预定义的扩展选项被创建
+			var myComponentInstance = new myComponent()
+			// 尽管可以命令式的创建扩展实例，不过在多数情况下将组件构造器注册为一个自定义元素，然后声明式的用在模板中。我们将在后面详细说明组件系统。现在你只需要知道所有的 Vue.js 组件其实都是被扩展的 Vue 实例。
+		};
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
